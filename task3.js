@@ -78,4 +78,7 @@ The input object contains some information about an API request,
 One problem with the code is that it uses an asynchronous function with forEach,
  which can lead to unexpected behavior. Another issue is that the expensiveOperation function is
   being called multiple times with the same arguments for the same domain, which is inefficient.
+  Promise.all() would be a good improvement to the code. Instead of calling expensiveOperation for each domain name separately, 
+  we could create an array of promises, each of which calls expensiveOperation with a single domain name and its corresponding data. 
+  We could then use Promise.all() to wait for all of the promises to resolve before returning the results.
 */
